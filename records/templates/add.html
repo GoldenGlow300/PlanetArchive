@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Add a Planet{% endblock %}
+
+{% block content %}
+<h1>Add a New Planet</h1>
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

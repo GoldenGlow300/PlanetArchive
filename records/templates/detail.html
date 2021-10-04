@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ planet.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ planet.name }}</h1>
+    <p>{{ planet.description }}</p>
+    <br/>
+    <p>
+        Ordinality: {{ planet.ordinality }} <br/>
+        Size: {{ planet.size }} Earth Masses<br/>
+        Distance: {{ planet.distance }} AU<br/>
+    </p>
+{% endblock %}

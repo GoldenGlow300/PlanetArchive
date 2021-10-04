@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Planets{% endblock %}
+{% block content %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+
+<table>
+  <tr>
+    <th>Ordinality</th>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Distance</th>
+  </tr>
+    {% for record in planet_records %}
+        <tr>
+            <td>{{ record.ordinality }}</td>
+            <td><a href="{{ record.get_absolute_url }}">{{ record.name }}</a></td>
+            <td>{{ record.size }}</td>
+            <td>{{ record.distance }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<br/>
+
+<form action="{% url "records:record_add" %}">
+    <input type="submit" value="Add a Planet" />
+</form>
+{% endblock %}
