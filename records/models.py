@@ -10,7 +10,7 @@ class Planet(models.Model):
     distance = models.FloatField()
 
     def get_absolute_url(self):
-        return reverse("records:record_detail", args=[self.name])
+        return reverse("records:record_detail", kwargs={'name': self.name})
     
 
     class Meta: 

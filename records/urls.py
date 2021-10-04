@@ -5,6 +5,6 @@ app_name = 'records'
 
 urlpatterns = [
     path('', views.RecordListView.as_view(), name='record_list'),
-    path('add/', views.record_add, name='record_add'),
-    path('<slug:planet_name>/', views.record_detail, name='record_detail'),
+    path('add/', views.RecordFormView.as_view(), name='record_add'),
+    path('<name>/', views.RecordDetailView.as_view(), name='record_detail'),
 ]
