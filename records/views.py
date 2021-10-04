@@ -30,22 +30,3 @@ class RecordFormView(FormView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
-
-
-# def record_detail(request, planet_name):
-#     planet = get_object_or_404(Planet, name= planet_name)
-
-#     return render(request, 'detail.html', {'planet': planet})
-
-   
-# def record_add(request):
-#     if request.method == "POST":
-#         new_form = PlanetForm(request.POST)
-
-#         if new_form.is_valid():
-#             new_form.save()
-#             return HttpResponseRedirect(reverse('records:record_list'))
-#     else:
-#         new_form = PlanetForm()
-    
-#     return render(request, 'add.html', {'form': new_form})
