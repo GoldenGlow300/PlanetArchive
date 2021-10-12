@@ -23,6 +23,7 @@ td, th {
     <th>Name</th>
     <th>Size</th>
     <th>Distance</th>
+    <th></th>
   </tr>
     {% for record in planet_records %}
         <tr>
@@ -30,6 +31,11 @@ td, th {
             <td><a href="{{ record.get_absolute_url }}">{{ record.name }}</a></td>
             <td>{{ record.size }}</td>
             <td>{{ record.distance }}</td>
+            <td>
+              <form action="{% url "records:record_update" record.name %}">
+                <input type="submit" value="Update" />
+              </form>
+            </td>
         </tr>
     {% endfor %}
 </table>

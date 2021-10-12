@@ -10,4 +10,9 @@
         Size: {{ planet.size }} Earth Masses<br/>
         Distance: {{ planet.distance }} AU<br/>
     </p>
+
+    <form action="{% url "records:record_delete" planet.name %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete Planet" />
+    </form>
 {% endblock %}

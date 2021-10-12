@@ -12,7 +12,6 @@ class Planet(models.Model):
     def get_absolute_url(self):
         return reverse("records:record_detail", kwargs={'name': self.name})
     
-
     class Meta: 
         ordering = ('ordinality',)
     
